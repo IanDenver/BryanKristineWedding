@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryan & Kristine - Wedding Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="details.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="#home" class="nav-brand-link">
+            <div class="nav-brand serif">
+                B <span class="script">&</span> K
+            </div>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <ul class="nav-links serif" id="navLinks">
+            <li><a href="#venue" class="nav-link">THE VENUE</a></li>
+            <li><a href="#story" class="nav-link">OUR STORY</a></li>
+            <li><a href="#timeline" class="nav-link">THE TIMELINE</a></li>
+            <li><a href="#entourage" class="nav-link">THE ENTOURAGE</a></li>
+            <li><a href="#details" class="nav-link">DETAILS</a></li>
+            <li><a href="#rsvp" class="nav-link">RSVP</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="monogram script">B <span class="serif">&</span> K</div>
+            <div class="hero-date serif">01 . 07 . 2027</div>
+            <a href="#rsvp" class="hero-btn serif">RSVP</a>
+            <div class="hero-hashtag serif">#toTINfinityandBRYond</div>
+        </div>
+    </header>
+
+    <section class="countdown-section fade-in">
+        <div class="countdown-wrapper">
+            <div class="floral-art">
+                <svg width="80" height="20" viewBox="0 0 80 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 10H30M50 10H80M40 2L48 10L40 18L32 10L40 2Z" stroke="#8F9E8B" stroke-width="1" />
+                </svg>
+            </div>
+            <h3 class="serif countdown-title">Counting Down To Our Forever</h3>
+            <div class="countdown-grid serif">
+                <div class="countdown-box">
+                    <span id="days" class="countdown-number">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-box">
+                    <span id="hours" class="countdown-number">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-box">
+                    <span id="minutes" class="countdown-number">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-box">
+                    <span id="seconds" class="countdown-number">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="invite-section fade-in watercolor-bg">
+        <h3 class="serif sage-accent tracking-wide">YOU ARE INVITED!</h3>
+        <h1 class="serif title-names">BRYAN & KRISTINE</h1>
+        <h3 class="serif dark-sage tracking-wide">ARE GETTING MARRIED</h3>
+    </section>
+
+    <section class="media-section fade-in">
+        <div class="media-container art-frame">
+            <img src="photo/2.jpg" alt="Wedding Venue" class="feature-image">
+            <p class="watermark-text serif"></p>
+        </div>
+    </section>
+
+    <section class="venue-section fade-in" id="venue">
+        <div class="venue-collage-bg">
+            <div class="venue-collage">
+                <div class="collage-col">
+                    <div class="art-frame-white"><img src="photo/3.jpg" alt="Couple on balcony"
+                            class="collage-img-left"></div>
+                </div>
+                <div class="collage-col">
+                    <div class="art-frame-white"><img src="photo/4.jpg" alt="Couple close up"
+                            class="collage-img-center"></div>
+                </div>
+                <div class="collage-col collage-stack">
+                    <div class="art-frame-white"><img src="photo/5.jpg" alt="Bride details" class="collage-img-right">
+                    </div>
+                    <div class="art-frame-white"><img src="photo/6.jpg" alt="Groom details" class="collage-img-right">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="venue-title-container">
+            <p class="script accent-subtitle">Join us to celebrate</p>
+            <h1 class="serif title-names sage-accent" style="margin: 0;">THE VENUE</h1>
+            <div class="floral-art" style="margin-top: 15px;">
+                <svg width="60" height="15" viewBox="0 0 60 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 7.5Q30 -5 50 7.5Q30 20 10 7.5Z" stroke="#8F9E8B" stroke-width="1" />
+                    <line x1="0" y1="7.5" x2="60" y2="7.5" stroke="#8F9E8B" stroke-width="0.5" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="venue-info-grid">
+            <div class="venue-photos">
+                <img src="photo/in1.jpg" alt="Main Venue" class="main-venue-img">
+                <img src="photo/in2.jpg" alt="Reception Detail" class="sub-venue-img">
+            </div>
+
+            <div class="venue-details">
+                <svg class="map-pin" width="45" height="45" viewBox="0 0 24 24" fill="#5a6b56"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                </svg>
+
+                <h3 class="serif dark-sage venue-name">Ezekiels' Grill & Family Restaurant,<br>Subic, Zambales</h3>
+
+                <div class="map-snippet art-frame">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3730.701900242565!2d120.23241527489895!3d14.86839927046452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33967700407e59cd%3A0xf19777a7570f07f1!2sEzekiels'%20Grill%20%26%20Family%20Restaurant!5e1!3m2!1sen!2sph!4v1789527253771!5m2!1sen!2sph"
+                        width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section fade-in" id="story">
+        <div class="story-block top-block">
+            <div class="story-img-wrapper left-img">
+                <div class="art-frame-white"><img src="photo/01.jpg" alt="Couple smiling"></div>
+            </div>
+            <div class="story-text serif text-light">
+                <p class="script accent-subtitle text-light" style="font-size: 2.2rem; margin-bottom: 5px;">The
+                    beginning of forever</p>
+                <h2 class="story-heading tracking-wide">OUR STORY</h2>
+                <p><i>It all started with a glance—one ordinary day that turned extraordinary. What began as casual
+                        conversations turned into deep midnight talks, shared dreams, and little moments that made our
+                        hearts feel at home.</i></p>
+            </div>
+        </div>
+
+        <div class="story-block middle-block paper-bg">
+            <div class="story-text serif text-dark">
+                <p><i>From spontaneous adventures to quiet evenings, we've grown hand in hand, learning, laughing, and
+                        loving through every chapter.</i></p>
+                <br>
+                <p><i>Over the years, we've built a bond grounded in friendship, respect, and a lot of inside jokes.</i>
+                </p>
+            </div>
+            <div class="story-img-wrapper right-img">
+                <div class="art-frame-sage"><img src="photo/02.jpg" alt="Couple laughing"></div>
+            </div>
+        </div>
+
+        <div class="story-block bottom-block">
+            <div class="story-img-wrapper left-img">
+                <div class="art-frame-white"><img src="photo/03.jpg" alt="Hands with engagement ring"></div>
+            </div>
+            <div class="story-text serif text-light">
+                <p><i>After countless coffee dates, movie marathons, and shared sunsets, we finally said "yes" to
+                        forever.</i></p>
+                <br>
+                <p><i>Now, we can't wait to begin this new chapter—with all of you by our side.</i></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section fade-in" id="timeline">
+        <div class="timeline-container">
+            <p class="script accent-subtitle dark-sage text-center">Plan the day</p>
+            <h2 class="serif title-names dark-sage" style="text-align: center; margin-bottom: 10px;">THE TIMELINE</h2>
+            <div class="floral-art text-center" style="margin-bottom: 20px;">
+                <svg width="100" height="15" viewBox="0 0 100 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 7.5Q50 -5 70 7.5Q50 20 30 7.5Z" stroke="#8F9E8B" stroke-width="1" />
+                    <line x1="0" y1="7.5" x2="30" y2="7.5" stroke="#8F9E8B" stroke-width="0.5" />
+                    <line x1="70" y1="7.5" x2="100" y2="7.5" stroke="#8F9E8B" stroke-width="0.5" />
+                </svg>
+            </div>
+            <p class="serif tracking-wide sage-accent" style="text-align: center; margin-bottom: 60px;">ORDER OF EVENTS
+            </p>
+
+            <div class="timeline-items">
+                <div class="timeline-item">
+                    <div class="timeline-time serif">9:30 AM</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="serif dark-sage">Guest Arrival</h3>
+                        <p class="serif">Kindly arrive promptly to find your seats and settle in before the ceremony
+                            begins.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time serif">10:00 AM</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="serif dark-sage">Wedding Ceremony</h3>
+                        <p class="serif">The exchange of vows and celebration of our holy union.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time serif">11:30 AM</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="serif dark-sage">Reception Lunch</h3>
+                        <p class="serif">Enjoy drinks, light appetizers, and music as the sun sets over Subic Bay.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time serif">1:00 PM</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="serif dark-sage">First Dance & Celebrationr</h3>
+                        <p class="serif">Dancing and celebrating together in the warm afternoon sun.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="entourage-section fade-in watercolor-bg" id="entourage">
+        <div class="entourage-container">
+            <p class="script accent-subtitle dark-sage text-center">Standing by our side</p>
+            <h2 class="serif title-names dark-sage" style="text-align: center; margin-bottom: 10px;">THE ENTOURAGE</h2>
+            <div class="floral-art text-center" style="margin-bottom: 50px;">
+                <svg width="80" height="20" viewBox="0 0 80 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 10H30M50 10H80M40 2L48 10L40 18L32 10L40 2Z" stroke="#8F9E8B" stroke-width="1" />
+                </svg>
+            </div>
+
+            <div class="entourage-group">
+                <h3 class="serif entourage-category">Principal Sponsors</h3>
+                <div class="entourage-names serif">
+                    <p>Mr. Lharie Lopez & Mrs. Maricel Lopez</p>
+                    <p>Mr. Adrian Santos & Mrs. Jeanette Santos</p>
+                    <p>Mr. Mario Pangilinan & Mrs. Luzviminda Sabeniano</p>
+                    <p>Mr. Glen Balana & Mrs. Gemma Balana</p>
+                    <p>Mr. Alvin Navea & Mrs. Grace Navea</p>
+                    <p>Mr. Jeffrey Ogerio & Mrs. Liza Ogerio</p>
+                    <p>Mr. Ekel Bautista & Mrs. Riza Tolentino</p>
+                    <p>Mr. Edwin Felarca & Mrs. Sunshine Mae Sulit</p>
+                </div>
+            </div>
+
+            <div class="entourage-row">
+                <div class="entourage-group half">
+                    <h3 class="serif entourage-category">Best Man</h3>
+                    <p class="serif entourage-names">Rommel Manalo</p>
+                </div>
+                <div class="entourage-group half">
+                    <h3 class="serif entourage-category">Maid of Honor</h3>
+                    <p class="serif entourage-names">Kim Santos</p>
+                </div>
+            </div>
+
+            <div class="entourage-row">
+                <div class="entourage-group half">
+                    <h3 class="serif entourage-category">Groomsmen</h3>
+                    <div class="entourage-names serif">
+                        <p>Kenneth Santos</p>
+                        <p>Mark john Escobar</p>
+                        <p>Andrie Montinola</p>
+                        <p>Aldrey Vargas</p>
+                        <p>Dewey Abella</p>
+                    </div>
+                </div>
+                <div class="entourage-group half">
+                    <h3 class="serif entourage-category">Bridesmaids</h3>
+                    <div class="entourage-names serif">
+                        <p>Paris Elaiza Bautista</p>
+                        <p>Aliyah Navea</p>
+                        <p>Aubrey Flores</p>
+                        <p>Hazel Flores</p>
+                        <p>Jenny Ann Santos</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="entourage-row">
+                <div class="entourage-group half">
+                    <h3 class="serif entourage-category">Flower Girl</h3>
+                    <p class="serif entourage-names">Krishnna Reign Flores</p>
+                    <p class="serif entourage-names">Cristle Rose Flores</p>
+                </div>
+                <div class="entourage-group half">
+                    <h3 class="serif entourage-category">Ring Bearer</h3>
+                    <p class="serif entourage-names">Marquis Felix Santos</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="details-section fade-in" id="details">
+        <div class="details-container">
+            <p class="script accent-subtitle dark-sage text-center">Everything else</p>
+            <h2 class="serif title-names dark-sage" style="text-align: center; margin-bottom: 20px;">THE DETAILS</h2>
+            <div class="floral-art text-center" style="margin-bottom: 50px;">
+                <svg width="100" height="15" viewBox="0 0 100 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 7.5Q50 -5 70 7.5Q50 20 30 7.5Z" stroke="#8F9E8B" stroke-width="1" />
+                    <line x1="0" y1="7.5" x2="30" y2="7.5" stroke="#8F9E8B" stroke-width="0.5" />
+                    <line x1="70" y1="7.5" x2="100" y2="7.5" stroke="#8F9E8B" stroke-width="0.5" />
+                </svg>
+            </div>
+
+            <div class="details-grid">
+                <div class="details-card">
+                    <h3 class="serif dark-sage details-card-title">Attire & Dress Code</h3>
+                    <p class="serif details-text">
+                        We would love to see our family and friends dressed up with us! We kindly request a
+                        <strong>Formal / Semi-Formal</strong> dress code.
+                    </p>
+                    <div class="color-palette">
+                        <span class="color-swatch" style="background-color: #8F9E8B;" title="Sage Green"></span>
+                        <span class="color-swatch" style="background-color: #b3c2ae;" title="Light Sage"></span>
+                        <span class="color-swatch" style="background-color: #d8cba7;" title="Champagne"></span>
+                        <span class="color-swatch" style="background-color: #fcf9f2; border: 1px solid #ccc;"
+                            title="Cream"></span>
+                    </div>
+                    <p class="serif details-palette-note">
+                        <strong>Palette:</strong> Sage Green, Earthy Neutrals, Champagne & Cream.<br>
+                        <em>(Kindly avoid wearing white, black, or denim jeans.)</em>
+                    </p>
+                </div>
+
+                <div class="details-card">
+                    <h3 class="serif dark-sage details-card-title">Gift Guide</h3>
+                    <p class="serif details-text">
+                        With all that we have, we are truly blessed. Your presence and prayers are the best gifts we
+                        could request.<br><br>
+                        However, if you wish to honor us with a gift, a monetary contribution to help us build our
+                        future home would be deeply appreciated.
+                    </p>
+                </div>
+
+                <div class="details-card">
+                    <h3 class="serif dark-sage details-card-title">Important Notes</h3>
+                    <p class="serif details-text">
+                        <strong>RSVP:</strong> Please let us know if you can make it by November 7, 2026.<br><br>
+                        <strong>Unplugged Ceremony:</strong> We invite you to be truly present with us during the
+                        ceremony. Please keep phones and cameras away until the reception!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rsvp-section fade-in" id="rsvp">
+        <div class="rsvp-container">
+            <h2 class="serif title-names text-light" style="text-align: center; margin-bottom: 15px;">RSVP</h2>
+            <p class="serif tracking-wide" style="text-align: center; color: #d6e0d0; margin-bottom: 40px;">Kindly
+                respond by November 7, 2026</p>
+
+            <form class="rsvp-form serif" action="https://formspree.io/f/xoeqodel" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <select name="attendance" required>
+                        <option value="" disabled selected>Will you be attending?</option>
+                        <option value="Joyfully Accepts">Joyfully Accepts</option>
+                        <option value="Regretfully Declines">Regretfully Declines</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="guest_count">
+                        <option value="" disabled selected>Number of Guests Attending</option>
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea name="notes" rows="3"
+                        placeholder="Dietary restrictions or special notes (Optional)"></textarea>
+                </div>
+                <button type="submit" class="rsvp-submit-btn serif">SUBMIT RSVP</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer serif">
+        <div class="watermark">THE PARISIAN INVITES</div>
+    </footer>
+
+    <audio id="bg-music" loop autoplay>
+        <source src="music/song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <button id="music-toggle" class="floating-music-btn" aria-label="Toggle Music">
+        <svg id="music-icon-play" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z" />
+        </svg>
+        <svg id="music-icon-pause" viewBox="0 0 24 24" style="display: none;">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+        </svg>
+    </button>
+
+    <a href="#rsvp" class="floating-rsvp-btn serif">RSVP Now</a>
+
+    <script>
+        const weddingDate = new Date("Jan 7, 2027 00:00:00").getTime();
+
+        const countdown = setInterval(function () {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.querySelector(".countdown-section").innerHTML = "<h2 class='serif sage-accent' style='font-size: 2.5rem;'>Today is the Wedding Day!</h2>";
+            }
+        }, 1000);
+
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            navToggle.classList.toggle('open');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                navToggle.classList.remove('open');
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        const bgMusic = document.getElementById('bg-music');
+        const musicToggle = document.getElementById('music-toggle');
+        const iconPlay = document.getElementById('music-icon-play');
+        const iconPause = document.getElementById('music-icon-pause');
+
+        document.body.addEventListener('click', function () {
+            if (bgMusic.paused && !bgMusic.classList.contains('user-paused')) {
+                bgMusic.play().then(() => {
+                    iconPlay.style.display = 'none';
+                    iconPause.style.display = 'block';
+                }).catch(() => { });
+            }
+        }, { once: true });
+
+        musicToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (bgMusic.paused) {
+                bgMusic.play();
+                bgMusic.classList.remove('user-paused');
+                iconPlay.style.display = 'none';
+                iconPause.style.display = 'block';
+            } else {
+                bgMusic.pause();
+                bgMusic.classList.add('user-paused');
+                iconPlay.style.display = 'block';
+                iconPause.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
