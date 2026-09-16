@@ -1,4 +1,22 @@
 /* --- Base Theme & Reset --- */
+:root {
+    /* Fixed mobile variables: Taller envelope & card so nothing gets cut off! */
+    --env-width: 340px;
+    --env-height: 270px;
+    /* Increased from 230px */
+    --card-height: 255px;
+    /* Increased from 210px */
+    --card-slide-up: -160px;
+    /* Increased from -130px to slide up higher */
+
+    /* Elegant Color Palette */
+    --sage-light: #8b9984;
+    --sage-mid: #75876d;
+    --sage-dark: #6b7c64;
+    --sage-shadow: #5c6a56;
+    --paper-white: #fbfaf3;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,21 +25,23 @@
 
 body {
     background-color: #f7f6f1;
-    /* Textured off-white background */
-    background-image: radial-gradient(#ebe9e0 1px, transparent 1px);
-    background-size: 20px 20px;
+    background-image: radial-gradient(#e2dfd3 1px, transparent 1px);
+    background-size: 25px 25px;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     position: relative;
+    /* Prevent mobile tap highlights */
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* --- Typography --- */
 .script {
     font-family: 'Great Vibes', cursive;
-    font-size: 2.8rem;
+    font-size: 2.2rem;
+    /* Slightly scaled for perfect mobile fit */
     font-weight: normal;
 }
 
@@ -29,59 +49,81 @@ body {
     font-family: 'Cormorant Garamond', serif;
 }
 
-.gold {
+/* Advanced Gold Foil Text Effect */
+.gold-foil {
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    background-size: 200% auto;
     color: #a88c56;
-    /* The specific muted gold from the image */
+    /* Fallback */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
 }
 
 /* --- Floral Backgrounds --- */
 .floral-bg {
     position: absolute;
-    top: 0;
-    width: 40vw;
+    width: 50vw;
     height: 100vh;
-    opacity: 0.6;
+    opacity: 0.4;
     pointer-events: none;
     z-index: 0;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    animation: float 15s ease-in-out infinite alternate;
 }
 
 .floral-bg.left {
-    left: 0;
-    /* Add your eucalyptus watercolor image URL here */
-    background-image: url('https://www.transparenttextures.com/patterns/rice-paper-2.png');
+    left: -5%;
+    top: -5%;
+    background-image: radial-gradient(circle at 0% 0%, rgba(139, 153, 132, 0.15) 0%, transparent 50%);
 }
 
 .floral-bg.right {
-    right: 0;
-    /* Add your eucalyptus watercolor image URL here */
-    background-image: url('https://www.transparenttextures.com/patterns/rice-paper-2.png');
+    right: -5%;
+    bottom: -5%;
+    background-image: radial-gradient(circle at 100% 100%, rgba(139, 153, 132, 0.15) 0%, transparent 50%);
+    animation-delay: -5s;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(15px, 15px) scale(1.05);
+    }
 }
 
 /* --- Envelope Container --- */
 .envelope-wrapper {
     position: relative;
-    width: 450px;
-    height: 300px;
+    width: var(--env-width);
+    height: var(--env-height);
     cursor: pointer;
     z-index: 10;
-    transition: transform 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.1));
 }
 
 .envelope-wrapper:hover {
-    transform: scale(1.02);
+    transform: scale(1.03) translateY(-5px);
 }
 
-/* --- Envelope Flaps (Using clip-path for realistic angles) --- */
+/* --- Envelope Flaps --- */
 .flap {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #75876d;
-    /* The beautiful sage green */
-    /* Adds a subtle paper texture to the green */
+    background-color: var(--sage-mid);
     background-image: url('https://www.transparenttextures.com/patterns/handmade-paper.png');
 }
 
@@ -94,14 +136,13 @@ body {
     clip-path: polygon(100% 0, 100% 100%, 50% 50%);
     z-index: 4;
     background-color: #6f8067;
-    /* Slightly darker for shadow depth */
 }
 
 .bottom-flap {
     clip-path: polygon(0 100%, 50% 45%, 100% 100%);
     z-index: 5;
     background-color: #798c71;
-    filter: drop-shadow(0 -5px 10px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 -5px 10px rgba(0, 0, 0, 0.15));
 }
 
 .top-flap {
@@ -109,63 +150,100 @@ body {
     z-index: 7;
     transform-origin: top;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), z-index 0s 0.3s;
-    background-color: #6b7c64;
+    background-color: var(--sage-dark);
 }
 
 /* --- The Invitation Card --- */
 .card {
     position: absolute;
     bottom: 5px;
-    left: 20px;
-    right: 20px;
-    height: 280px;
-    background-color: #fbfaf3;
+    left: 15px;
+    right: 15px;
+    height: var(--card-height);
+    background-color: var(--paper-white);
+    background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
     z-index: 3;
     border-radius: 4px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
-    /* Waits for flap */
+    overflow: hidden;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.4s;
+}
+
+/* Art flourishes inside the card */
+.corner-flourish {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    pointer-events: none;
+}
+
+.corner-flourish.top-left {
+    top: 0;
+    left: 0;
+}
+
+.corner-flourish.bottom-right {
+    bottom: 0;
+    right: 0;
 }
 
 .card-content {
-    padding: 30px;
+    padding: 15px;
+    /* Reduced from 20px for mobile breathing room */
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .names {
-    font-size: 2.2rem;
-    letter-spacing: 4px;
-    margin: 15px 0;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    margin: 5px 0;
+    text-transform: uppercase;
+}
+
+.divider {
+    margin: 10px 0;
 }
 
 .details {
     color: #4a4a4a;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 25px;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
 }
 
 .rsvp-btn {
-    background-color: #97a690;
+    background-color: var(--sage-mid);
     color: white;
     border: 1px solid #a88c56;
-    /* Gold border */
-    padding: 8px 20px;
-    border-radius: 3px;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-decoration: none;
     cursor: pointer;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    /* Initially hidden/unclickable until envelope opens */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
 }
 
 .rsvp-btn:hover {
-    background-color: #75876d;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--sage-shadow);
+    transform: translateY(-2px) !important;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* --- The Wax Seal --- */
@@ -174,29 +252,43 @@ body {
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
     background: radial-gradient(circle at 30% 30%, #fdfcf9, #e6e3da);
     border-radius: 50%;
     z-index: 8;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), inset 0 0 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), inset 0 0 8px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.4s ease;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: pulse 2s infinite;
 }
 
-/* Simulates the embossed leaf ring */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(253, 252, 249, 0.6);
+    }
+
+    70% {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 0 15px rgba(253, 252, 249, 0);
+    }
+
+    100% {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(253, 252, 249, 0);
+    }
+}
+
 .seal-ring {
     position: absolute;
-    width: 85%;
-    height: 85%;
+    width: 82%;
+    height: 82%;
     border-radius: 50%;
-    border: 1px dashed rgba(168, 140, 86, 0.4);
+    border: 1.5px solid rgba(168, 140, 86, 0.3);
 }
 
 .seal-text {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 600;
     letter-spacing: 1px;
 }
@@ -204,18 +296,19 @@ body {
 /* --- Watermark --- */
 .watermark {
     position: fixed;
-    bottom: 30px;
+    bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
     color: #8b9984;
-    letter-spacing: 3px;
-    font-size: 0.9rem;
-    opacity: 0.8;
+    letter-spacing: 4px;
+    font-size: 0.75rem;
+    opacity: 0.7;
+    z-index: 1;
 }
 
 .watermark span {
     font-style: italic;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 /* ==========================================
@@ -226,20 +319,77 @@ body {
 .envelope-wrapper.open .top-flap {
     transform: rotateX(180deg);
     z-index: 2;
-    /* Moves behind the card */
 }
 
-/* 2. Wax seal fades and scales away */
+/* 2. Wax seal shatters/fades away */
 .envelope-wrapper.open .wax-seal {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(1.5);
+    transform: translate(-50%, -50%) scale(1.8);
     pointer-events: none;
+    animation: none;
+    /* Stop pulsing */
 }
 
-/* 3. Card slides out to match the image exactly */
+/* 3. Card slides out */
 .envelope-wrapper.open .card {
-    transform: translateY(-160px);
+    transform: translateY(var(--card-slide-up));
     z-index: 6;
-    /* Moves in front of top flap, behind front flaps */
-    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* 4. Button becomes clickable and fades in */
+.envelope-wrapper.open .rsvp-btn {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition: opacity 0.5s ease 1s, transform 0.5s ease 1s, background-color 0.3s;
+}
+
+/* 5. Stop hover shake after it's open */
+.envelope-wrapper.open:hover {
+    transform: scale(1) translateY(0);
+}
+
+/* ==========================================
+   DESKTOP RESPONSIVENESS (Scale UP for bigger screens)
+   ========================================== */
+@media (min-width: 768px) {
+    :root {
+        --env-width: 500px;
+        --env-height: 330px;
+        --card-height: 300px;
+        --card-slide-up: -190px;
+    }
+
+    .script {
+        font-size: 3.2rem;
+    }
+
+    .names {
+        font-size: 2.6rem;
+    }
+
+    .details {
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+    }
+
+    .rsvp-btn {
+        padding: 12px 28px;
+        font-size: 0.95rem;
+    }
+
+    .corner-flourish {
+        width: 80px;
+        height: 80px;
+    }
+
+    .wax-seal {
+        width: 75px;
+        height: 75px;
+    }
+
+    .seal-text {
+        font-size: 1.6rem;
+    }
 }

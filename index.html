@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Bryan & Kristine Wedding</title>
     <!-- Import Elegant Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
 
 <body>
 
-    <!-- Background Floral Elements (Placeholders for your watercolor images) -->
+    <!-- Soft, floating background art -->
     <div class="floral-bg left"></div>
     <div class="floral-bg right"></div>
 
@@ -28,14 +28,34 @@
 
         <!-- The Invitation Card -->
         <div class="card">
+
+            <!-- Artistic Corner Flourishes (SVG) -->
+            <svg class="corner-flourish top-left" viewBox="0 0 100 100">
+                <path d="M0,0 Q50,0 100,50 Q50,10 0,100 Z" fill="#97a690" opacity="0.15" />
+                <path d="M0,0 Q30,0 60,30 Q30,5 0,60 Z" fill="#a88c56" opacity="0.2" />
+            </svg>
+            <svg class="corner-flourish bottom-right" viewBox="0 0 100 100">
+                <path d="M100,100 Q50,100 0,50 Q50,90 100,0 Z" fill="#97a690" opacity="0.15" />
+                <path d="M100,100 Q70,100 40,70 Q70,95 100,40 Z" fill="#a88c56" opacity="0.2" />
+            </svg>
+
             <div class="card-content">
-                <h1 class="script gold">You are invited!</h1>
-                <h2 class="serif gold names">Bryan & Kristine</h2>
+                <h1 class="script gold-foil">You are invited!</h1>
+                <h2 class="serif gold-foil names">Bryan & Kristine</h2>
+
+                <div class="divider">
+                    <svg width="80" height="15" viewBox="0 0 80 15" fill="none">
+                        <path d="M0 7.5H30M50 7.5H80M40 0L47.5 7.5L40 15L32.5 7.5L40 0Z" fill="#a88c56" />
+                    </svg>
+                </div>
+
                 <div class="details serif">
                     <p>Thursday, January 7, 2027</p>
                     <p>Subic, Zambales</p>
                 </div>
-                <button class="rsvp-btn serif" id="rsvp-btn">VIEW DETAILS & RSVP</button>
+
+                <!-- Notice we link this directly to the details page -->
+                <a href="details.html" class="rsvp-btn serif">VIEW DETAILS & RSVP</a>
             </div>
         </div>
 
@@ -45,9 +65,10 @@
         <div class="flap bottom-flap"></div>
 
         <!-- The Wax Seal -->
-        <div class="wax-seal">
+        <div class="wax-seal" id="seal">
             <div class="seal-ring"></div>
-            <span class="serif gold seal-text">B&K</span>
+            <span class="serif gold-foil seal-text">B<span class="script"
+                    style="font-size: 1.2rem; margin:0 2px;">&</span>K</span>
         </div>
 
     </div>
@@ -57,7 +78,14 @@
         THE <span>PARISIAN</span> INVITES
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Simple script to toggle the envelope open state
+        const envelope = document.getElementById('envelope');
+
+        envelope.addEventListener('click', () => {
+            envelope.classList.add('open');
+        });
+    </script>
 </body>
 
 </html>
